@@ -4,11 +4,162 @@
   <meta charset="UTF-8">
   <title>Market Tavern</title>
 
-  <script src="./public/build/main.bundle.js" type=""></script>
+  <link href="https://fonts.googleapis.com/css?family=Arvo:100|Lato:300" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/bootstrap.min.css">
   <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
-  <h1>YO</h1>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Reservations</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <!-- <nav class="container-fluid">
+    <div class="row pull-right">
+      <ul class="nav-list">
+        <li>
+          <a href="#home">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="#menu">
+            Menu
+          </a>
+        </li>
+        <li>
+          <a href="#reservations">
+            Reservations
+          </a>
+        </li>
+        <li>
+          <a href="#about">
+            About
+          </a>
+        </li>
+        <li>
+          <a href="#gallery">
+            Gallery
+          </a>
+        </li>
+        <li>
+          <a href="#careers">
+            Careers
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav> -->
+
+  <div class="container-fluid header">
+    <div class="logo-wrapper">
+      <img class="logo" src="./public/assets/logo.png" alt="">
+    </div>
+
+    <div class="header-buttons">
+      <a href="#reservations">
+        <button class="btn">
+          reservations
+        </button>
+      </a>
+      <a href="#menu">
+        <button class="btn">
+          menu
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <div class="container-fluid info-wrapper">
+    <div class="svg-border">
+      <svg class="trapezoid left" viewbox="0 0 100 100" preserveAspectRatio="none" height="200px"width="50%">
+        <path
+        d="M0,0
+        L100,30
+        L100,100
+        L0,100z" fill="#262422"></path>
+      </svg>
+      <svg class="trapezoid right" viewbox="0 0 100 100" preserveAspectRatio="none" height="200px"width="50%">
+        <path
+        d="M0,100
+        L0,30
+        L100,0
+        L100,100" fill="#262422"></path>
+      </svg>
+
+    </div>
+    <div class="info-box">
+      <div class="row contain">
+        <div class="col-xs-6">
+          <h2 class="info-title">- Hours -</h2>
+          <div class="split-sides">
+            <p class="left">Mon - Wed</p>
+            <p class="right">11am - 9pm</p>
+          </div>
+          <div class="split-sides">
+            <p class="left">Thurs - Fri</p>
+            <p class="right">11am - 10pm</p>
+          </div>
+          <div class="split-sides">
+            <p class="left">Sat</p>
+            <p class="right">10am - 10pm</p>
+          </div>
+          <div class="split-sides">
+            <p class="left">Sun</p>
+            <p class="right">10am - 9pm</p>
+          </div>
+        </div>
+        <div class="hr-vert"></div>
+        <div class="col-xs-6">
+          <h2 class="info-title">- Contact -</h2>
+          <div class="split-sides">
+            <p class="left">Phone</p>
+            <p class="right">
+              <a href="tel:12099328001">
+                209 932 8001
+              </a>
+            </p>
+          </div>
+          <div class="split-sides">
+            <p class="left">Address</p>
+            <p class="right">
+              <a class="address-link" href="tel:12099328001">
+                236 Lincoln Center <br>
+                Stockton, California
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 </body>
+<script src="./public/build/jquery-3.2.1.slim.min.js" type=""></script>
+<script src="./public/build/bootstrap.min.js" type=""></script>
+<script src="./public/build/main.bundle.js" type=""></script>
 </html>
