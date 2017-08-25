@@ -1,0 +1,11 @@
+@media (max-width: 500px) {
+  img.logo {
+    min-width: 300px;
+  }
+  .info-box {
+    width: 90vw !important;
+  }
+  .hr-vert {
+    display: none;
+  }
+}
