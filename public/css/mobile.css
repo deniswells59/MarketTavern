@@ -2,10 +2,20 @@
   img.logo {
     min-width: 300px;
   }
+}
+
+@media (max-width: 767px) {
   .info-box {
     width: 90vw !important;
+    padding: 1.5em 0 3em;
   }
   .hr-vert {
     display: none;
+  }
+  ul.nav.navbar-nav {
+    float: left;
+  }
+  div.container-fluid.info-wrapper {
+    height: 240px;
   }
 }

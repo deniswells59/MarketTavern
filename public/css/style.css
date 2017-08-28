@@ -76,6 +76,7 @@ div.container-fluid.header {
 }
 div.container-fluid.info-wrapper {
   position: relative;
+  height: 200px;
 }
 div.svg-border {
   position: absolute;;
@@ -164,4 +165,65 @@ h2.info-title {
 .split-sides p.right a.address-link {
   letter-spacing: 1px;
   font-size: 1em;
+}
+h2.title-center {
+  text-align: center;
+  color: #fcfcfc;
+  font-family: 'Arvo', serif;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+.outer-button#menu {
+  background: url('/public/assets/menu-button.png');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.outer-button#brunch {
+  background: url('/public/assets/brunch-button.png');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.outer-button#dessert {
+  background: url('/public/assets/dessert-button.png');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.outer-button#bar {
+  background: url('/public/assets/bar-button.png');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.outer-button {
+  text-align: center;
+  width: 80%;
+  margin: 2.5em auto;
+  height: 150px;
+  position: relative;
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.75);
+}
+button.inner-button.btn {
+  color: #fcfcfc;
+  background-color: transparent;
+  z-index: 10000000;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50px;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.3);
+}
+p.desc-center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Lato', sans-serif;
+  color: #fcfcfc;
 }
