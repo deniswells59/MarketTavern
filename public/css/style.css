@@ -8,6 +8,13 @@ a {
   color: rgba(0,0,0,.87);
   text-decoration: none;
 }
+.center {
+  text-align: center;
+}
+.no-margin {
+  margin-left: 0px;
+  margin-right: 0px;
+}
 .navbar-default {
   background-color: #262422;
   border: 0;
@@ -226,4 +233,25 @@ p.desc-center {
   margin-right: auto;
   font-family: 'Lato', sans-serif;
   color: #fcfcfc;
+}
+.container-fluid.wood-panels {
+  background: url('/public/assets/panels.png');
+  background-size: cover;
+  background-position: 50% 50%;
+  padding: 6em 0;
+}
+h2.reservation-title {
+  font-family: 'Arvo';
+  color: #fcfcfc;
+  font-weight: 100;
+  letter-spacing: 1px;
+  font-size: 2.2em;
+}
+p.reservation-text {
+  color: #fcfcfc;
+  letter-spacing: 1px;
+  font-family: 'Lato';
+}
+.container.menu-container {
+  padding-bottom: 2em;
 }
