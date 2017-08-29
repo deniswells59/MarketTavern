@@ -22,3 +22,16 @@
     padding: 4em 0;
   }
 }
+
+@media (max-width: 992px) {
+  .hidden-lg {
+    display: block;
+  }
+  .hidden-xs {
+    display: none;
+  }
+  .grid-square.grid-1,
+  .grid-square.grid-2 {
+    max-height: 200px;
+  }
+}

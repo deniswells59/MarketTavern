@@ -18,6 +18,12 @@ a {
 .relative {
   position: relative;
 }
+.hidden-lg {
+  display: none;
+}
+.hidden-xs {
+  display: block;
+}
 .navbar-default {
   background-color: #262422;
   border: 0;
@@ -241,7 +247,7 @@ p.desc-center {
   background: url('/public/assets/panels.png');
   background-size: cover;
   background-position: 50% 50%;
-  padding: 6em 0;
+  padding: 10em 0;
 }
 h2.reservation-title {
   font-family: 'Arvo';
@@ -282,11 +288,40 @@ p.reservation-text {
   background-position: 50% 50%;
 }
 .grid-square {
-  height: 400px;
+  height: 450px;
 }
 svg.trapezoid.left.top {
   top: -10em;
 }
 .grid-row {
-  padding: 4em 0;
+  padding: 5em 0;
+}
+.grid {
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.75);
+  padding: 0;
+}
+.about-wrapper {
+  text-align: center;
+  color: #fcfcfc;
+  width: 70%;
+  margin: 4em auto;
+}
+i.icon-food,
+i.icon-basket {
+  color: #ffc20e;
+  margin: 0;
+  font-size: 2.5em;
+}
+h3.grid-title {
+  font-family: 'Arvo', serif;
+  font-weight: 100;
+  font-size: 1.8em;
+  margin-bottom: 0;
+}
+hr.yellow {
+  width: 35%;
+  border-color: #ffc20e;
+}
+.grid-text {
+  font-family: 'Lato', sans-serif;
 }
