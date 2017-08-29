@@ -15,6 +15,9 @@ a {
   margin-left: 0px;
   margin-right: 0px;
 }
+.relative {
+  position: relative;
+}
 .navbar-default {
   background-color: #262422;
   border: 0;
@@ -252,6 +255,38 @@ p.reservation-text {
   letter-spacing: 1px;
   font-family: 'Lato';
 }
+.menu-wrapper {
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.3);
+}
 .container.menu-container {
-  padding-bottom: 2em;
+  padding-bottom: 5em;
+}
+.grid-wrapper {
+  background-color: #5f574f;
+}
+.grid-square.grid-1 {
+  background: url('/public/assets/grid-1.png');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.grid-square.grid-2 {
+  background: url('/public/assets/grid-2.png');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.grid-square.chalk {
+  background: url('/public/assets/chalk.png');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.grid-square {
+  height: 400px;
+}
+svg.trapezoid.left.top {
+  top: -10em;
+}
+.grid-row {
+  padding: 4em 0;
 }
