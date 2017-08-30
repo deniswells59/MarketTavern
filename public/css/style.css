@@ -243,7 +243,7 @@ p.desc-center {
   font-family: 'Lato', sans-serif;
   color: #fcfcfc;
 }
-.container-fluid.wood-panels {
+.wood-panels {
   background: url('/public/assets/panels.png');
   background-size: cover;
   background-position: 50% 50%;
@@ -255,6 +255,7 @@ h2.reservation-title {
   font-weight: 100;
   letter-spacing: 1px;
   font-size: 2.2em;
+  text-shadow: rgba(0, 0, 0, 0.7) 1px 2px 0px;
 }
 p.reservation-text {
   color: #fcfcfc;
@@ -271,6 +272,7 @@ p.reservation-text {
 }
 .grid-wrapper {
   background-color: #5f574f;
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.75);
 }
 .grid-square.grid-1 {
   background: url('/public/assets/grid-1.png');
@@ -282,7 +284,7 @@ p.reservation-text {
   background-size: cover;
   background-position: 50% 50%;
 }
-.grid-square.chalk {
+.chalk {
   background: url('/public/assets/chalk.png');
   background-size: cover;
   background-position: 50% 50%;
@@ -324,4 +326,103 @@ hr.yellow {
 }
 .grid-text {
   font-family: 'Lato', sans-serif;
+}
+.wood-panels.form-container {
+  padding: 3em 0;
+}
+.form-wrapper {
+  text-align: center;
+}
+.form-wrapper h2 {
+  font-size: 2.5em;
+  font-family: 'Arvo', serif;
+  color: #fcfcfc;
+  font-weight: 100;
+  letter-spacing: 1px;
+  text-shadow: rgba(0, 0, 0, 0.7) 1px 2px 0px;
+}
+.form-wrapper p {
+  font-family: 'Lato', sans-serif;
+  color: #fcfcfc;
+  font-size: 1.2em;
+}
+.form-wrapper input {
+  font-family: 'Lato', sans-serif;
+  padding: .2em;
+  font-size: 1.5em;
+  border: 1px solid gray;
+  display: inline;
+  width: 90%;
+  margin: 1em auto;
+}
+input[type="submit"] {
+  background-color: #5f574f;
+  border: 3px solid black;
+  color: #ffc20e;
+  font-family: 'Arvo';
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-shadow: rgba(0, 0, 0, 0.7) 1px 2px 0px;
+}
+.gallery-wrapper {
+  padding: 6em 0;
+}
+.gallery .col-md-6.chalk {
+  padding: 6em 0;
+}
+.gallery .col-md-6 {
+  height: 500px;
+  padding: 0;
+}
+.gallery-prev#gallery-1 {
+  background-size: cover;
+  background-position: 50% 50%;
+  background: url('/public/assets/gallery/gallery-1-prev.png');
+}
+.gallery-prev#gallery-2 {
+  background-size: cover;
+  background-position: 50% 50%;
+  background: url('/public/assets/gallery/gallery-2-prev.png');
+}
+.gallery-prev#gallery-3 {
+  background-size: cover;
+  background-position: 50% 50%;
+  background: url('/public/assets/gallery/gallery-3-prev.png');
+}
+.gallery-prev#gallery-4 {
+  background-size: cover;
+  background-position: 50% 50%;
+  background: url('/public/assets/gallery/gallery-4-prev.png');
+}
+h2.gallery-title {
+  font-family: 'Arvo', serif;
+  color: #ffc20e;
+  text-transform: uppercase;
+  font-weight: 100;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.gallery-button {
+  color: #fcfcfc;
+  background-color: transparent;
+  font-size: 1em;
+}
+.gallery-button-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin: 3em 0;
+}
+button.gallery-button.btn {
+  width: 25%;
+  font-size: .9em;
+  margin: 0px .5em;
+}
+p.gallery-text {
+  text-align: center;
+  color: #fcfcfc;
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
 }
