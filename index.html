@@ -8,10 +8,15 @@
   <link href="https://fonts.googleapis.com/css?family=Arvo:100|Lato:300" rel="stylesheet">
   <link rel="stylesheet" href="/public/css/bootstrap.min.css">
   <link rel="stylesheet" href="/public/css/fontello.css">
+  <link rel="stylesheet" href="/public/css/animate.css">
   <link rel="stylesheet" href="/public/css/style.css">
   <link rel="stylesheet" href="/public/css/mobile.css">
 </head>
 <body>
+
+  <div id="loader" class="loading">
+    <img class="spinner" src="./public/assets/Eclipse.svg" alt="">
+  </div>
 
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -28,33 +33,33 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="main-nav">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Menu</a></li>
-          <li><a href="#">Reservations</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Careers</a></li>
+          <li class="nav-link"><a data-scroll href="#home">Home</a></li>
+          <li class="nav-link"><a data-scroll href="#menu">Menu</a></li>
+          <li class="nav-link"><a data-scroll href="#reservations">Reservations</a></li>
+          <li class="nav-link"><a data-scroll href="#about">About</a></li>
+          <li class="nav-link"><a data-scroll href="#careers">Careers</a></li>
+          <li class="nav-link"><a data-scroll href="#gallery">Gallery</a></li>
         </ul>
 
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
 
-  <div class="container-fluid header">
+  <div id="home" class="container-fluid header">
     <div class="row">
       <div class="col-xs-12">
 
-        <div class="logo-wrapper">
+        <div class="logo-wrapper" id="logo">
           <img class="logo" src="./public/assets/logo.png" alt="">
         </div>
 
-        <div class="header-buttons">
-          <a href="#reservations">
+        <div class="header-buttons" id="header-buttons">
+          <a data-scroll href="#reservations">
             <button class="btn">
               reservations
             </button>
           </a>
-          <a href="#menu">
+          <a data-scroll href="#menu">
             <button class="btn">
               menu
             </button>
@@ -83,7 +88,7 @@
       </svg>
 
     </div>
-    <div class="info-box">
+    <div class="info-box" id="info-box">
       <div class="row contain">
         <div class="col-xs-12 col-sm-6">
           <h2 class="info-title">- Hours -</h2>
@@ -129,7 +134,7 @@
     </div>
   </div>
 
-  <div class="menu-wrapper">
+  <div id="menu" class="menu-wrapper">
     <div class="container menu-container">
     <div class="row">
       <div class="col-xs-12">
@@ -140,7 +145,7 @@
       </div>
 
       <div class="col-xs-12 col-md-6">
-        <div id="menu" class="outer-button">
+        <div id="menu-btn" class="outer-button">
           <button class="inner-button btn">
             menu
           </button>
@@ -179,19 +184,19 @@
   </div>
   </div>
 
-  <div class="container-fluid wood-panels">
+  <div data-offset="0" id="reservations" class="container-fluid wood-panels">
     <div class="row no-margin">
       <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-2">
         <h2 class="reservation-title">Make A Reservation</h2>
         <p class="reservation-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div>
       <div class="col-xs-12 col-md-4 center">
-        <!-- <script type='text/javascript' src='//www.opentable.com/widget/reservation/loader?rid=118651&domain=com&type=standard&theme=standard&lang=en-US&overlay=false&iframe=true'></script> -->
+        <script type='text/javascript' src='//www.opentable.com/widget/reservation/loader?rid=118651&domain=com&type=standard&theme=standard&lang=en-US&overlay=false&iframe=true'></script>
       </div>
     </div>
   </div>
 
-  <div class="grid-wrapper relative">
+  <div id="about" class="grid-wrapper relative">
 
     <svg class="trapezoid left top" viewbox="0 0 100 100" preserveAspectRatio="none" height="200px"width="100%">
       <filter id="dropshadow" height="100%">
@@ -247,7 +252,7 @@
     </div>
   </div>
 
-  <div class="wood-panels form-container">
+  <div id="careers" data-offset="200" class="wood-panels form-container">
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-6 col-md-offset-3">
@@ -266,42 +271,115 @@
     </div>
   </div>
 
-  <div class="gallery-wrapper">
+  <div id="gallery" class="gallery-wrapper relative">
+    <div class="container">
+      <div class="row gallery">
+
+        <div class="col-xs-12 col-md-6 chalk hidden-lg">
+          <h2 class="gallery-title">Gallery</h2>
+          <hr class="yellow">
+          <div class="gallery-button-wrapper">
+            <button class="gallery-button btn">
+              kitchen
+            </button>
+            <button class="gallery-button btn">
+              bar
+            </button>
+            <button class="gallery-button btn">
+              market
+            </button>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+          <div class="gallery-grid">
+            <div id="gallery-1" class="col-xs-6 gallery-prev"></div>
+            <div id="gallery-2" class="col-xs-6 gallery-prev"></div>
+            <div id="gallery-3" class="col-xs-6 gallery-prev"></div>
+            <div id="gallery-4" class="col-xs-6 gallery-prev"></div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 chalk hidden-xs">
+          <h2 class="gallery-title">Gallery</h2>
+          <hr class="yellow">
+          <div class="gallery-button-wrapper">
+            <button class="gallery-button btn">
+              kitchen
+            </button>
+            <button class="gallery-button btn">
+              bar
+            </button>
+            <button class="gallery-button btn">
+              market
+            </button>
+          </div>
+          <p class="gallery-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
     <div class="container">
       <div class="row">
-        <div class="gallery">
 
-          <div class="col-xs-12 col-md-6">
-            <div class="gallery-grid">
-              <div id="gallery-1" class="col-xs-6 gallery-prev"></div>
-              <div id="gallery-2" class="col-xs-6 gallery-prev"></div>
-              <div id="gallery-3" class="col-xs-6 gallery-prev"></div>
-              <div id="gallery-4" class="col-xs-6 gallery-prev"></div>
-            </div>
+        <div class="col-xs-12 col-md-4 center">
+          <img class="footer-logo" src="./public/assets/logo.png" alt="">
+          <hr class="yellow">
+          <div class="social inline">
+            <a href="">
+              <i class="icon-facebook"></i>
+            </a>
+            <a href="">
+              <i class="icon-instagram"></i>
+            </a>
+            <a href="">
+              <i class="icon-yelp"></i>
+            </a>
           </div>
-          <div class="col-xs-12 col-md-6 chalk">
-            <h2 class="gallery-title">Gallery</h2>
-            <hr class="yellow">
-            <div class="gallery-button-wrapper">
-              <button class="gallery-button btn">
-                kitchen
-              </button>
-              <button class="gallery-button btn">
-                bar
-              </button>
-              <button class="gallery-button btn">
-                market
-              </button>
-            </div>
-            <p class="gallery-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-          </div>
-
         </div>
+        <div class="col-xs-12 col-md-4"></div>
+        <div class="col-xs-12 col-md-4">
+          <div class="split-sides">
+            <p class="left">Phone</p>
+            <p class="right">
+              <a href="tel:12099328001">
+                209 932 8001
+              </a>
+            </p>
+          </div>
+          <div class="split-sides">
+            <p class="left">Address</p>
+            <p class="right">
+              <a class="address-link" href="tel:12099328001">
+                236 Lincoln Center <br>
+                Stockton, California
+              </a>
+            </p>
+          </div>
+          <br />
+          <div class="split-sides">
+            <p class="left">Hours</p>
+            <p class="right">M - W <span class="yellow">/</span> 11 - 9</p>
+          </div>
+          <div class="split-sides">
+            <p class="right">Th - F <span class="yellow">/</span> 11 - 10</p>
+          </div>
+          <div class="split-sides">
+            <p class="right">Sat <span class="yellow">/</span> 10 - 10</p>
+          </div>
+          <div class="split-sides">
+            <p class="right">Sun <span class="yellow">/</span> 10 - 9</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 
 </body>
+<script src="./public/build/smooth-scroll.min.js"></script>
 <script src="./public/build/jquery-3.2.1.slim.min.js" type=""></script>
 <script src="./public/build/bootstrap.min.js" type=""></script>
 <script src="./public/build/main.bundle.js" type=""></script>

@@ -29,6 +29,8 @@ a {
   border: 0;
 }
 nav.navbar-default div.container-fluid {
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.48);
+  padding: .5em;
   margin: 0;
 }
 ul.nav.navbar-nav {
@@ -70,7 +72,7 @@ img.logo {
   color: #ffc20e;
   margin: .5em 2.8em;
   background-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 1px 6px -1px rgba(0, 0, 0, 0.75);
 }
 button.btn {
   text-transform: uppercase;
@@ -84,7 +86,7 @@ button.btn {
   font-weight: 100;
 }
 div.container-fluid.header {
-  background: url(/public/assets/header.png);
+  /*background: url(/public/assets/header.png);*/
   background-size: cover;
   background-position: 50% 50%;
   padding-bottom: 10em;
@@ -111,6 +113,7 @@ svg.trapezoid.right {
   right: 0;
 }
 div.info-box {
+  opacity: 0;
   padding: 1.5em 0;
   position: absolute;
   text-align: center;
@@ -122,6 +125,9 @@ div.info-box {
   width: 600px;
   background-color: #3a3a3a;
   box-shadow: -1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+}
+div.info-box.animated {
+  opacity: 1;
 }
 .row.contain {
   margin-left: 0;
@@ -189,7 +195,7 @@ h2.title-center {
   text-transform: uppercase;
   font-weight: 100;
 }
-.outer-button#menu {
+.outer-button#menu-btn {
   background: url('/public/assets/menu-button.png');
   background-size: cover;
   background-position: 50% 50%;
@@ -209,13 +215,17 @@ h2.title-center {
   background-size: cover;
   background-position: 50% 50%;
 }
+.outer-button.animated {
+  opacity: 1;
+}
 .outer-button {
+  opacity: 0;
   text-align: center;
   width: 80%;
   margin: 2.5em auto;
   height: 150px;
   position: relative;
-  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 1px 6px -1px rgba(0, 0, 0, 0.75);
 }
 button.inner-button.btn {
   color: #fcfcfc;
@@ -244,9 +254,9 @@ p.desc-center {
   color: #fcfcfc;
 }
 .wood-panels {
-  background: url('/public/assets/panels.png');
-  background-size: cover;
-  background-position: 50% 50%;
+  background: url('/public/assets/panels.jpg');
+  background-size: auto 125%;
+  background-position: 0% 0%;
   padding: 10em 0;
 }
 h2.reservation-title {
@@ -265,14 +275,14 @@ p.reservation-text {
 .menu-wrapper {
   position: relative;
   z-index: 1000;
-  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.3)
 }
 .container.menu-container {
   padding-bottom: 5em;
 }
 .grid-wrapper {
   background-color: #5f574f;
-  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 1px 6px -1px rgba(0, 0, 0, 0.75);
 }
 .grid-square.grid-1 {
   background: url('/public/assets/grid-1.png');
@@ -299,7 +309,7 @@ svg.trapezoid.left.top {
   padding: 5em 0;
 }
 .grid {
-  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 1px 6px -1px rgba(0, 0, 0, 0.75);
   padding: 0;
 }
 .about-wrapper {
@@ -321,7 +331,7 @@ h3.grid-title {
   margin-bottom: 0;
 }
 hr.yellow {
-  width: 35%;
+  width: 20%;
   border-color: #ffc20e;
 }
 .grid-text {
@@ -367,12 +377,17 @@ input[type="submit"] {
 }
 .gallery-wrapper {
   padding: 6em 0;
+  background-color: #3a3a3a;
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.3);
+}
+.row.gallery {
+  box-shadow: 0px 1px 6px -1px rgba(0, 0, 0, 0.75);
 }
 .gallery .col-md-6.chalk {
-  padding: 6em 0;
+  padding: 5em 0;
 }
 .gallery .col-md-6 {
-  height: 500px;
+  /*height: 500px;*/
   padding: 0;
 }
 .gallery-prev#gallery-1 {
@@ -402,6 +417,7 @@ h2.gallery-title {
   font-weight: 100;
   text-align: center;
   letter-spacing: 1px;
+  font-size: 2.2em;
 }
 .gallery-button {
   color: #fcfcfc;
@@ -425,4 +441,72 @@ p.gallery-text {
   width: 75%;
   margin-right: auto;
   margin-left: auto;
+}
+img.footer-logo {
+  max-width: 300px;
+  min-width: 200px;
+  width: 100%;
+}
+.footer {
+  background-color: #262422;
+}
+.footer .container {
+  padding: 3em;
+}
+.social {
+  color: #ffc20e;
+}
+.social * {
+  color: #ffc20e;
+  font-size: 1.5em;
+}
+i.col-xs-4.icon-facebook {
+  text-align: end;
+}
+i.col-xs-4.icon-yelp {
+  text-align: start;
+}
+.footer .container .row .col-xs-12.col-md-4 {
+  margin-top: 1em;
+}
+.navbar-default .navbar-nav>li>a,
+button.btn, .overlay, .loading {
+  -webkit-transition: all .2s ease-out;
+  -moz-transition:    all .2s ease-out;
+  -o-transition:      all .2s ease-out;
+  transition:         all .2s ease-out;
+}
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+  color: #d0d0d0;
+  cursor: pointer;
+}
+button.btn:hover {
+  background-color: #ffc20e;
+  border-color: #ffc20e;
+  color: rgba(0,0,0,.87);
+  text-shadow: none;
+  cursor: pointer;
+}
+button.btn:hover + .overlay {
+  background-color: rgba(0,0,0,0);
+}
+.loading {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: #262422;
+  z-index: 100000;
+  top: 0;
+}
+.loading.loaded {
+  opacity: 0;
+}
+img.spinner {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  position: absolute;
+  top: 38vh;
+  height: 110px;
 }

@@ -19,7 +19,17 @@
     height: 240px;
   }
   .container-fluid.wood-panels {
-    padding: 4em 0;
+    padding: 4em 0 8em;
+  }
+  button.gallery-button.btn {
+    width: 85%;
+    margin: 10px .5em;
+  }
+  .gallery .col-md-6.chalk {
+    padding: 3em 0;
+  }
+  .row.gallery {
+    margin: 0 1em;
   }
 }
 
