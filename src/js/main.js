@@ -1,6 +1,14 @@
 (function() {
 
+  const GALLERY_BUTTONS = $('.gallery-button');
   let scroll = new SmoothScroll('a[href*="#"]');
+  let gallery = {
+    'kitchen': [1, 2, 3, 4],
+    'bar': [4, 3, 2, 1],
+    'market': [2, 3, 1, 4],
+  };
+
+  $(GALLERY_BUTTONS).click(changeGallery);
 
   function galleryPrevSize() {
     let chalk1 = document.getElementsByClassName('chalk')[3];
@@ -27,6 +35,8 @@
     animate(document.getElementById('info-box'), 'fadeInUp');
     animate(document.getElementById('logo'), 'fadeIn');
     animate(document.getElementById('header-buttons'), 'fadeIn');
+
+    iterateObject(document.getElementsByClassName('about-wrapper'), addFadeInAnimation);
     iterateObject(document.getElementsByClassName('outer-button'), addFadeInAnimation);
   }
 
@@ -47,6 +57,39 @@
 
     window.addEventListener('scroll', el.scrollEvent);
     el.scrollEvent();
+  }
+
+  function initGallery(label, page) {
+    if(['kitchen', 'bar', 'market'].indexOf(label) < 0) return;
+
+    let nums = gallery[label];
+    if(!nums || nums.length < 4) return;
+
+    let spliceOne = page * 4;
+    let spliceTwo = spliceOne + 4;
+    nums = nums.slice(spliceOne, spliceTwo);
+
+    $('.gallery-prev').each((idx, div) => {
+      let a    = $(div).find('a');
+      let prev = $(a).children()[0];
+      let url  = '/public/assets/gallery/gallery-';
+
+      $(a).attr('href', `${url}${nums[idx]}.png`);
+      $(prev).css({
+        'background-image': `url(${url}${nums[idx]}-prev.png)`
+      })
+    })
+    baguetteBox.run('.gallery', {
+      buttons: false,
+      captions: false,
+    });
+  }
+
+  function changeGallery() {
+    $(GALLERY_BUTTONS).each((i, b) => $(b).removeClass('active'));
+    $(this).addClass('active');
+
+    initGallery($(this).text(), 0);
   }
 
   function iterateObject(obj, func) {
@@ -85,7 +128,7 @@
   	let $slider = document.getElementById(id);
     let $sliderOffset = $slider.offsetTop;
 
-  	let yPos = window.pageYOffset / 5.5;
+  	let yPos = window.pageYOffset / 5.25;
   	yPos = -yPos / 2 + offset;
 
     if(yPos > 0) yPos = 0;
@@ -108,10 +151,5 @@
 
   BackgroundLoader('/public/assets/header.png', 1)
   initResponsive();
-
-  let gallery = {
-    'kitchen': {
-
-    }
-  }
+  initGallery('kitchen', 0);
 })();
