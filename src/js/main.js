@@ -1,6 +1,8 @@
 (function() {
 
   const GALLERY_BUTTONS = $('.gallery-button');
+  const FORM            = $('#career-form');
+
   let scroll = new SmoothScroll('a[href*="#"]');
   let gallery = {
     'kitchen': [1, 2, 3, 4],
@@ -9,6 +11,7 @@
   };
 
   $(GALLERY_BUTTONS).click(changeGallery);
+  $(FORM).submit(formSubmit);
 
   function galleryPrevSize() {
     let chalk1 = document.getElementsByClassName('chalk')[3];
@@ -72,7 +75,7 @@
     $('.gallery-prev').each((idx, div) => {
       let a    = $(div).find('a');
       let prev = $(a).children()[0];
-      let url  = '/public/assets/gallery/gallery-';
+      let url  = '/assets/gallery/gallery-';
 
       $(a).attr('href', `${url}${nums[idx]}.png`);
       $(prev).css({
@@ -104,7 +107,7 @@
     var elemTop = el.getBoundingClientRect().top;
     var elemBottom = el.getBoundingClientRect().bottom - window.innerHeight * .2;
 
-    var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+    var isVisible = (elemBottom <= window.innerHeight);
     return isVisible;
   }
 
@@ -149,7 +152,11 @@
     });
   }
 
-  BackgroundLoader('/public/assets/header.png', 1)
+  function formSubmit(e) {
+    e.preventDefault();
+  }
+
+  BackgroundLoader('/assets/header.png', 1)
   initResponsive();
   initGallery('kitchen', 0);
 })();

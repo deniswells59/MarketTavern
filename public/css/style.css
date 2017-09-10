@@ -86,7 +86,7 @@ button.btn {
   font-weight: 100;
 }
 div.container-fluid.header {
-  /*background: url(/public/assets/header.png);*/
+  /*background: url(/assets/header.png);*/
   background-size: cover;
   background-position: 50% 50%;
   padding-bottom: 10em;
@@ -196,22 +196,22 @@ h2.title-center {
   font-weight: 100;
 }
 .outer-button#menu-btn {
-  background: url('/public/assets/menu-button.png');
+  background: url('/assets/menu-button.png');
   background-size: cover;
   background-position: 50% 50%;
 }
 .outer-button#brunch {
-  background: url('/public/assets/brunch-button.png');
+  background: url('/assets/brunch-button.png');
   background-size: cover;
   background-position: 50% 50%;
 }
 .outer-button#dessert {
-  background: url('/public/assets/dessert-button.png');
+  background: url('/assets/dessert-button.png');
   background-size: cover;
   background-position: 50% 50%;
 }
 .outer-button#bar {
-  background: url('/public/assets/bar-button.png');
+  background: url('/assets/bar-button.png');
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -254,7 +254,7 @@ p.desc-center {
   color: #fcfcfc;
 }
 .wood-panels {
-  background: url('/public/assets/panels.jpg');
+  background: url('/assets/panels.jpg');
   background-size: auto 125%;
   background-position: 0% 0%;
   padding: 10em 0;
@@ -288,17 +288,17 @@ p.reservation-text {
   box-shadow: 0px 1px 6px -1px rgba(0, 0, 0, 0.75);
 }
 .grid-square.grid-1 {
-  background: url('/public/assets/grid-1.png');
+  background: url('/assets/grid-1.png');
   background-size: cover;
   background-position: 50% 50%;
 }
 .grid-square.grid-2 {
-  background: url('/public/assets/grid-2.png');
+  background: url('/assets/grid-2.png');
   background-size: cover;
   background-position: 50% 50%;
 }
 .chalk {
-  background: url('/public/assets/chalk.png');
+  background: url('/assets/chalk.png');
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -469,7 +469,8 @@ i.col-xs-4.icon-yelp {
   margin-top: 1em;
 }
 .navbar-default .navbar-nav>li>a,
-button.btn, .overlay, .loading {
+button.btn, .overlay, .loading,
+.col-xs-6.gallery-prev {
   -webkit-transition: all .2s ease-out;
   -moz-transition:    all .2s ease-out;
   -o-transition:      all .2s ease-out;
@@ -487,7 +488,7 @@ button.btn.active {
   text-shadow: none;
   cursor: pointer;
 }
-button.btn:hover + .overlay {
+.menu-link:hover + .overlay {
   background-color: rgba(0,0,0,0);
 }
 .loading {
@@ -510,10 +511,32 @@ img.spinner {
   top: 38vh;
   height: 110px;
 }
+.col-xs-6.gallery-prev:hover {
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  cursor: pointer;
+}
+.gallery-prev .overlay {
+  opacity: 0;
+}
+.gallery-prev:hover .overlay {
+  opacity: 1;
+}
 .col-xs-6.gallery-prev {
   padding: 0;
 }
 .col-xs-6.gallery-prev img {
   width: 100%;
   height: 100%;
+}
+i.icon-picture {
+  position: absolute;
+  top: 37%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  text-align: center;
+  margin-right: auto;
+  color: #fcfcfc;
+  font-size: 3em;
 }
