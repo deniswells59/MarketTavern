@@ -29,6 +29,7 @@
     "pm2": "^2.5.0",
     "request": "^2.81.0",
     "serve-favicon": "^2.4.3",
-    "uglify-js": "^3.0.15"
+    "uglify-js": "^3.0.15",
+    "webpack": "^3.5.6"
   }
 }
