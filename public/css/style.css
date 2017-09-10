@@ -540,3 +540,6 @@ i.icon-picture {
   color: #fcfcfc;
   font-size: 3em;
 }
+.g-recaptcha {
+  display: none;
+}

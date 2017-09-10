@@ -154,6 +154,7 @@
 
   function formSubmit(e) {
     e.preventDefault();
+    grecaptcha.execute();
   }
 
   BackgroundLoader('/assets/header.png', 1)
