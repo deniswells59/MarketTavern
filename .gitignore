@@ -1,2 +1,3 @@
 node_modules
-public/build
+public/build/main.bundle.js
+public/build/main.bundle.js.map
