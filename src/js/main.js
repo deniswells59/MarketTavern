@@ -158,12 +158,12 @@
 
   }
 
-  function sendInfo() {
-    console.log(grecaptcha.getResponse());
-
-  }
-
   BackgroundLoader('/assets/header.png', 1)
   initResponsive();
   initGallery('kitchen', 0);
 })();
+
+function sendInfo() {
+  console.log(grecaptcha.getResponse());
+
+}
