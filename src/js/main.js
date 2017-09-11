@@ -156,7 +156,11 @@
     e.preventDefault();
     grecaptcha.execute();
 
+  }
+
+  function sendInfo() {
     console.log(grecaptcha.getResponse());
+
   }
 
   BackgroundLoader('/assets/header.png', 1)
