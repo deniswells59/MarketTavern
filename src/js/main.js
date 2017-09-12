@@ -154,12 +154,39 @@
 
   function formSubmit(e) {
     e.preventDefault();
-    grecaptcha.execute();
+    grecaptcha.execute(); // Goes to get captcha
   }
 
-  window.sendInfo = function() {
-    console.log(grecaptcha.getResponse());
+  window.getCaptcha = function() {
+    submitCaptcha(grecaptcha.getResponse());
+  }
 
+  function submitCaptcha() {
+    $.ajax({
+      'url': 'captcha.php',
+      'method': 'POST',
+      'data': {
+        'devices': data.devices,
+        'captcha': grecaptcha.getResponse()
+      },
+      success: (res) => {
+        let resObj = JSON.parse(res);
+        if(resObj.verified) {
+          sendEmail();
+        }
+      },
+      error: (err) => {
+        console.log('ERROR:', err);
+      }
+    })
+  }
+
+  function sendEmail() {
+    emailjs.send('postmark', 'market_tavern_careers', {
+      'name': document.getElementById('name').value,
+      'email':document.getElementById('email').value,
+      'phone':document.getElementById('phone').value
+    })
   }
 
   BackgroundLoader('/assets/header.png', 1)

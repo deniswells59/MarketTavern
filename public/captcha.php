@@ -2,7 +2,7 @@
 $name=stripslashes($_POST["name"]);
 $email=stripslashes($_POST["email"]);
 $message=stripslashes($_POST["message"]);
-$secret="6Lczfy8UAAAAAHL1MQl9LIYlHLwqNBoGc5zKJCik";
+$secret="6LezFjAUAAAAAD_RpMQbXIpMpYY32u9Jqqv1AWjB";
 $response=$_POST["captcha"];
 $devices=$_POST["devices"];
 $quote = $devices * 31;
