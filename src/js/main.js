@@ -166,7 +166,6 @@
       'url': 'captcha.php',
       'method': 'POST',
       'data': {
-        'devices': data.devices,
         'captcha': grecaptcha.getResponse()
       },
       success: (res) => {
