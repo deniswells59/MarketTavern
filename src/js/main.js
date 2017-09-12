@@ -168,6 +168,7 @@
       'method': 'POST',
       'body': data
     })
+    .then(data => return data.json())
     .then(res => {
       console.log('res', res);
       let resObj = JSON.parse(res);
