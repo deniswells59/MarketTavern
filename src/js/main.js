@@ -161,22 +161,21 @@
     submitCaptcha(grecaptcha.getResponse());
   }
 
-  function submitCaptcha() {
-    $.ajax({
-      'url': 'captcha.php',
+  function submitCaptcha(captchaRes) {
+    let data = new FormData();
+    data.append('captcha', captchaRes);
+    fetch('captcha.php', {
       'method': 'POST',
-      'data': {
-        'captcha': grecaptcha.getResponse()
-      },
-      success: (res) => {
-        let resObj = JSON.parse(res);
-        if(resObj.verified) {
-          sendEmail();
-        }
-      },
-      error: (err) => {
-        console.log('ERROR:', err);
+      'body': data
+    })
+    .then(res => {
+      let resObj = JSON.parse(res);
+      if(resObj.verified) {
+        sendEmail();
       }
+    })
+    .catch(err => {
+      console.log('ERROR:', err);
     })
   }
 
