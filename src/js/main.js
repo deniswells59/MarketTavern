@@ -169,6 +169,7 @@
       'body': data
     })
     .then(res => {
+      console.log('res', res);
       let resObj = JSON.parse(res);
       if(resObj.verified) {
         sendEmail();
