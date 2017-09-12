@@ -155,6 +155,10 @@
   function formSubmit(e) {
     e.preventDefault();
     grecaptcha.execute();
+  }
+
+  window.sendInfo = function() {
+    console.log(grecaptcha.getResponse());
 
   }
 
@@ -162,8 +166,3 @@
   initResponsive();
   initGallery('kitchen', 0);
 })();
-
-function sendInfo() {
-  console.log(grecaptcha.getResponse());
-
-}

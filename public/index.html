@@ -407,11 +407,18 @@
 
   <div class="g-recaptcha"
         data-sitekey="6LezFjAUAAAAAF-2KK6ikBwlfiL2_FQHu9vh6eVw"
-        data-callback="sendInfo"
+        data-callback="initForm"
         data-size="invisible">
   </div>
 
+
+
 </body>
+<script>
+  function initForm() {
+    window.sendInfo();
+  }
+</script>
 <script src='https://www.google.com/recaptcha/api.js' type="text/javascript"></script>
 <script src="./build/baguette.min.js" type="text/javascript"></script>
 <script src="./build/smooth-scroll.min.js" type="text/javascript"></script>
