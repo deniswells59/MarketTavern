@@ -11,9 +11,9 @@
     label: 'kitchen'
   };
   let gallery = {
-    'kitchen': [1, 2, 3, 4],
-    'bar'    : [5, 6, 8, 7],
-    'market' : [2, 3, 1, 4],
+    'kitchen': [9, 2, 3, 10, 4, 11, 1, 12],
+    'bar'    : [5, 7, 16, 8, 13, 6, 15, 14],
+    'market' : [17, 20, 19, 18],
   };
 
   $(LEFT).click(prevGallery);
@@ -99,7 +99,13 @@
     let spliceOne = page * 4;
     let spliceTwo = spliceOne + 4;
 
-    return nums = nums.slice(spliceOne, spliceTwo);
+    let numsToReturn = nums.slice(spliceOne, spliceTwo);
+
+    if(numsToReturn.length < 4) {
+      numsToReturn = getGallery(page - 1, nums);
+      galleryState.page -= 1;
+    }
+    return numsToReturn;
   }
 
   function nextGallery() {
@@ -217,7 +223,7 @@
     })
   }
 
-  BackgroundLoader('/assets/header_new.png', 1)
+  BackgroundLoader('/assets/header.jpg', 1)
   initResponsive();
   initGallery('kitchen', 0);
 })();
