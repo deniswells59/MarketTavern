@@ -2,14 +2,22 @@
 
   const GALLERY_BUTTONS = $('.gallery-button');
   const FORM            = $('#career-form');
+  const LEFT            = $('.icon-left-open-big');
+  const RIGHT           = $('.icon-right-open-big');
 
   let scroll = new SmoothScroll('a[href*="#"]');
+  let galleryState = {
+    page: 0,
+    label: 'kitchen'
+  };
   let gallery = {
     'kitchen': [1, 2, 3, 4],
-    'bar': [4, 3, 2, 1],
-    'market': [2, 3, 1, 4],
+    'bar'    : [5, 6, 8, 7],
+    'market' : [2, 3, 1, 4],
   };
 
+  $(LEFT).click(prevGallery);
+  $(RIGHT).click(nextGallery);
   $(GALLERY_BUTTONS).click(changeGallery);
   $(FORM).submit(formSubmit);
 
@@ -65,12 +73,10 @@
   function initGallery(label, page) {
     if(['kitchen', 'bar', 'market'].indexOf(label) < 0) return;
 
-    let nums = gallery[label];
-    if(!nums || nums.length < 4) return;
+    let gall = gallery[label];
+    if(!gall || gall.length < 4) return;
 
-    let spliceOne = page * 4;
-    let spliceTwo = spliceOne + 4;
-    nums = nums.slice(spliceOne, spliceTwo);
+    let nums = getGallery(page, gall);
 
     $('.gallery-prev').each((idx, div) => {
       let a    = $(div).find('a');
@@ -80,19 +86,41 @@
       $(a).attr('href', `${url}${nums[idx]}.png`);
       $(prev).css({
         'background-image': `url(${url}${nums[idx]}-prev.png)`
-      })
-    })
+      });
+    });
+
     baguetteBox.run('.gallery', {
       buttons: false,
       captions: false,
     });
   }
 
+  function getGallery(page, nums) {
+    let spliceOne = page * 4;
+    let spliceTwo = spliceOne + 4;
+
+    return nums = nums.slice(spliceOne, spliceTwo);
+  }
+
+  function nextGallery() {
+    galleryState.page += 1;
+    initGallery(galleryState.label, galleryState.page);
+  }
+
+  function prevGallery() {
+    galleryState.page -= 1;
+
+    if(galleryState.page < 0) galleryState.page = 0;
+    initGallery(galleryState.label, galleryState.page);
+  }
+
   function changeGallery() {
     $(GALLERY_BUTTONS).each((i, b) => $(b).removeClass('active'));
     $(this).addClass('active');
 
-    initGallery($(this).text(), 0);
+    galleryState.page = 0;
+    galleryState.label = $(this).text();
+    initGallery(galleryState.label, galleryState.page);
   }
 
   function iterateObject(obj, func) {
@@ -162,23 +190,23 @@
   }
 
   function submitCaptcha(captchaRes) {
-    let data = new FormData();
-    data.append('captcha', captchaRes);
-    fetch('captcha.php', {
-      'method': 'POST',
-      'body': data
-    })
-    .then(data => return data.body.json())
-    .then(res => {
-      console.log('res', res);
-      let resObj = JSON.parse(res);
-      if(resObj.verified) {
-        sendEmail();
-      }
-    })
-    .catch(err => {
-      console.log('ERROR:', err);
-    })
+    // let data = new FormData();
+    // data.append('captcha', captchaRes);
+    // fetch('captcha.php', {
+    //   'method': 'POST',
+    //   'body': data
+    // })
+    // .then(data => return data.body.json())
+    // .then(res => {
+    //   console.log('res', res);
+    //   let resObj = JSON.parse(res);
+    //   if(resObj.verified) {
+    //     sendEmail();
+    //   }
+    // })
+    // .catch(err => {
+    //   console.log('ERROR:', err);
+    // })
   }
 
   function sendEmail() {
@@ -189,7 +217,7 @@
     })
   }
 
-  BackgroundLoader('/assets/header.png', 1)
+  BackgroundLoader('/assets/header_new.png', 1)
   initResponsive();
   initGallery('kitchen', 0);
 })();
