@@ -188,6 +188,11 @@
 
   function formSubmit(e) {
     e.preventDefault();
+
+    $(FORM).children().each((e, el) => {
+      if(!$(el).val()) return;
+    });
+
     grecaptcha.execute(); // Goes to get captcha
   }
 
@@ -196,6 +201,7 @@
   }
 
   function submitCaptcha(captchaRes) {
+    console.log('yo');
     // let data = new FormData();
     // data.append('captcha', captchaRes);
     // fetch('captcha.php', {
