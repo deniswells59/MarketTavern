@@ -1,5 +1,4 @@
 (function() {
-
   const GALLERY_BUTTONS = $('.gallery-button');
   const FORM            = $('#career-form');
   const LEFT            = $('.icon-left-open-big');
@@ -201,24 +200,21 @@
   }
 
   function submitCaptcha(captchaRes) {
-    console.log('yo');
-    // let data = new FormData();
-    // data.append('captcha', captchaRes);
-    // fetch('captcha.php', {
-    //   'method': 'POST',
-    //   'body': data
-    // })
-    // .then(data => return data.body.json())
-    // .then(res => {
-    //   console.log('res', res);
-    //   let resObj = JSON.parse(res);
-    //   if(resObj.verified) {
-    //     sendEmail();
-    //   }
-    // })
-    // .catch(err => {
-    //   console.log('ERROR:', err);
-    // })
+    let data = new FormData();
+    data.append('captcha', captchaRes);
+    fetch('captcha.php', {
+      'method': 'POST',
+      'body': data
+    })
+    .then(data => { return data.json() })
+    .then(res => {
+      if(res.verified) {
+        sendEmail();
+      }
+    })
+    .catch(err => {
+      console.log('ERROR:', err);
+    })
   }
 
   function sendEmail() {
