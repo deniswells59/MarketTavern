@@ -469,7 +469,7 @@ i.col-xs-4.icon-yelp {
   margin-top: 1em;
 }
 .navbar-default .navbar-nav>li>a,
-button.btn, .overlay, .loading,
+button.btn, .overlay, .loader,
 .col-xs-6.gallery-prev {
   -webkit-transition: all .2s ease-out;
   -moz-transition:    all .2s ease-out;
@@ -491,7 +491,7 @@ button.btn.active {
 .menu-link:hover + .overlay {
   background-color: rgba(0,0,0,0);
 }
-.loading {
+.loader {
   position: fixed;
   height: 100%;
   width: 100%;
@@ -499,7 +499,7 @@ button.btn.active {
   z-index: 100000;
   top: 0;
 }
-.loading.loaded {
+.loader.loaded {
   opacity: 0;
 }
 img.spinner {
@@ -577,4 +577,7 @@ i.icon-right-open-big {
   -moz-transition:    all .2s ease-out;
   -o-transition:      all .2s ease-out;
   transition:         all .2s ease-out;
+}
+.footer .container .row .col-xs-12.col-md-4 {
+  margin: 1.2em 0;
 }
