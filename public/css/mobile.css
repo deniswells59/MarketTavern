@@ -49,4 +49,7 @@
   .yelp-wrapper {
     width: 300px;
   }
+  .outer-button#catering {
+    width: 80%;
+  }
 }

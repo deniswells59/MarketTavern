@@ -215,6 +215,18 @@ h2.title-center {
   background-size: cover;
   background-position: 50% 50%;
 }
+.outer-button#catering {
+  background: url(/assets/catering-button.png);
+  background-size: cover;
+  background-position: 50% 50%;
+  margin: 0;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#catering a button.inner-button.btn {
+  width: 300px;
+}
 .outer-button.animated {
   opacity: 1;
 }
